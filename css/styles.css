@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+span.highlight {
+  line-height: 0.2;
+  background: #558694;
+  display: inline-block;
+  padding-bottom: 25px; }
+
+body {
+  background: #335058; }
+  body div.centering {
+    margin: auto;
+    max-width: 93%; }
+  body nav.main-navbar {
+    background: #161616;
+    color: #fff;
+    height: 287px;
+    display: flex;
+    padding: 0 3.5% 0 3.5%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between; }
+    body nav.main-navbar div.logo-container {
+      display: flex;
+      flex-flow: column;
+      align-items: center; }
+      body nav.main-navbar div.logo-container img {
+        margin-bottom: 20px; }
+      body nav.main-navbar div.logo-container h1 {
+        text-align: center;
+        font-weight: 900;
+        font-size: 2.4rem;
+        line-height: 0.9; }
+    body nav.main-navbar ul.menu-items {
+      margin-right: 63px;
+      border-bottom: 4px solid #fff;
+      display: flex;
+      flex-flow: row nowrap;
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      list-style-type: none; }
+      body nav.main-navbar ul.menu-items li {
+        position: relative; }
+        body nav.main-navbar ul.menu-items li a {
+          display: block;
+          padding: 21px 28px 21px 28px; }
+        body nav.main-navbar ul.menu-items li ul.submenu {
+          display: none;
+          list-style-type: none; }
+          body nav.main-navbar ul.menu-items li ul.submenu li:hover {
+            color: #fff;
+            background: #161616; }
+        body nav.main-navbar ul.menu-items li:hover {
+          background: #fff;
+          color: #161616; }
+          body nav.main-navbar ul.menu-items li:hover ul.submenu {
+            display: block;
+            background: #fff;
+            position: absolute; }
+  body section {
+    margin-top: 25px;
+    margin-bottom: 25px; }
+    body section h1 {
+      font-weight: 900;
+      font-size: 7.5rem;
+      line-height: 1; }
+    body section p {
+      line-height: 1; }
+  body section.search-area {
+    color: #fff; }
+  body section.whotfareyou {
+    background: #161616;
+    color: #fff;
+    padding-top: 60px;
+    padding-bottom: 87px; }
+    body section.whotfareyou p {
+      font-size: 4rem; }
+  body section.leftism {
+    color: #fff;
+    padding-top: 20px; }
+    body section.leftism h1 {
+      font-family: 'Montserrat Alternates', sans-serif; }
+
+/*# sourceMappingURL=styles.css.map */

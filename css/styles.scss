@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$cyan_c: #335058;
+$black_c: #161616;
+$white_c: #fff;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+span.highlight {
+  line-height: 0.2;
+  background: #558694;
+  display: inline-block;
+
+  padding-bottom: 25px;
+}
+
+body {
+  background: $cyan_c;
+
+  div.centering {
+    margin: auto;
+    max-width: 93%;
+  }
+
+  nav.main-navbar {
+    background: $black_c;
+    color: $white_c;
+
+    height: 287px;
+    display: flex;
+
+    padding: 0 3.5% 0 3.5%;
+
+    display: flex;
+    flex-flow: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    div.logo-container {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      img {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: 900;
+        font-size: 2.4rem;
+        line-height: 0.9;
+      }
+    }
+
+    ul.menu-items {
+      margin-right: 63px;
+      border-bottom: 4px solid #fff;
+
+      display: flex;
+      flex-flow: row nowrap;
+
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      list-style-type: none;
+
+      li {
+        position: relative;
+
+        a {
+          display: block;
+          padding: 21px 28px 21px 28px;
+        }
+
+        ul.submenu {
+          display: none;
+          list-style-type: none;
+
+          li:hover {
+            color: $white_c;
+            background: $black_c;
+          }
+        }
+
+        &:hover {
+          background: $white_c;
+          color: $black_c;
+
+          ul.submenu {
+            display: block;
+            background: $white_c;
+
+            position: absolute;
+          }
+        }
+      }
+    } // ul.menu-items
+  } // div.main-navbar
+
+  section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    h1 {
+      font-weight: 900;
+      font-size: 7.5rem;
+      line-height: 1;
+    }
+
+    p {
+      line-height: 1;
+    }
+  }
+
+  section.search-area {
+    color: $white_c;
+  }
+
+  section.whotfareyou {
+    background: $black_c;
+    color: $white_c;
+
+    padding-top: 60px;
+    padding-bottom: 87px;
+
+    p {
+      font-size: 4rem;
+    }
+  }
+
+  section.leftism {
+    color: $white_c;
+
+    padding-top: 20px;
+    h1 {
+      font-family: 'Montserrat Alternates', sans-serif;
+    }
+  }
+}
