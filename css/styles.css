@@ -71,6 +71,7 @@ body {
       font-weight: 700;
       font-size: 3rem; }
     body section p {
+      margin-top: 30px;
       font-size: 1.5rem;
       color: #fff;
       mix-blend-mode: difference;
