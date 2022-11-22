@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
 $cyan_c: #335058;
 $black_c: #161616;
 $white_c: #fff;
@@ -13,7 +22,8 @@ $white_c: #fff;
 html {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 a {
@@ -29,19 +39,33 @@ span.highlight {
   padding-bottom: 25px;
 }
 
+head {
+  height: 0;
+}
+
 body {
-  background: $cyan_c;
+  background: #B5B5B5;
 
   div.centering {
+    background-color: #fff;
+    background-image: url("../img/bg.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-blend-mode: difference;
+
+    min-height: 95vh;
+    max-width: 60%;
     margin: auto;
-    max-width: 93%;
+    position: relative;
   }
 
   nav.main-navbar {
-    background: $black_c;
+    background-image: url("../img/bg.png");
+    background-repeat: repeat;
+    background-size: cover;
     color: $white_c;
 
-    height: 287px;
+    height: 100px;
     display: flex;
 
     padding: 0 3.5% 0 3.5%;
@@ -52,105 +76,52 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    div.logo-container {
+    a.logo-container {
+      max-height: 90%;
       display: flex;
       flex-flow: column;
       align-items: center;
 
       img {
-        margin-bottom: 20px;
-      }
-
-      h1 {
-        text-align: center;
-        font-weight: 900;
-        font-size: 2.4rem;
-        line-height: 0.9;
+        width: auto;
+        height: 100%;
       }
     }
 
-    ul.menu-items {
-      margin-right: 63px;
-      border-bottom: 4px solid #fff;
-
-      display: flex;
-      flex-flow: row nowrap;
-
-      font-size: 3rem;
+    h1 {
       font-weight: 900;
-      text-transform: uppercase;
-      list-style-type: none;
+      font-size: 2rem;
+    }
 
-      li {
-        position: relative;
-
-        a {
-          display: block;
-          padding: 21px 28px 21px 28px;
-        }
-
-        ul.submenu {
-          display: none;
-          list-style-type: none;
-
-          li:hover {
-            color: $white_c;
-            background: $black_c;
-          }
-        }
-
-        &:hover {
-          background: $white_c;
-          color: $black_c;
-
-          ul.submenu {
-            display: block;
-            background: $white_c;
-
-            position: absolute;
-          }
-        }
-      }
-    } // ul.menu-items
+    span.menu {
+      font-size: 2.5rem;
+    }
   } // div.main-navbar
 
   section {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin: 50px 0;
+    padding: 0 50px;
 
     h1 {
-      font-weight: 900;
-      font-size: 7.5rem;
-      line-height: 1;
+      color: #fff;
+      mix-blend-mode: difference;
+      font-weight: 700;
+      font-size: 3rem;
     }
 
     p {
-      line-height: 1;
+      font-size: 1.5rem;
+      color: #fff;
+      mix-blend-mode: difference;
+      text-align: justify;
     }
   }
 
-  section.search-area {
-    color: $white_c;
-  }
-
-  section.whotfareyou {
-    background: $black_c;
-    color: $white_c;
-
-    padding-top: 60px;
-    padding-bottom: 87px;
-
-    p {
-      font-size: 4rem;
-    }
-  }
-
-  section.leftism {
-    color: $white_c;
-
-    padding-top: 20px;
-    h1 {
-      font-family: 'Montserrat Alternates', sans-serif;
-    }
+  footer {
+    margin: 50px;
+    padding: 50px 0;
+    border-top: 2px solid #fff;
+    mix-blend-mode: difference;
+    color: #fff;
   }
 }
