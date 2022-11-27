@@ -31,7 +31,9 @@ span.highlight {
   box-decoration-break: clone; }
 
 input {
-  padding: 0.25em;
+  font-family: Montserrat;
+  font-weight: 600;
+  padding: 0.25em 0.8em;
   background: #fff;
   border: 2px solid var(--input-border);
   border-radius: 0; }
