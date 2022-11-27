@@ -36,7 +36,6 @@ a {
   color: inherit; }
 
 span.highlight {
-  background-blend-mode: difference;
   background-clip: text, border-box;
   background: linear-gradient(0deg, var(--cyan) 0%, var(--cyan) 60%, rgba(0, 0, 0, 0) 60%); }
 
