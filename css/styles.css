@@ -54,25 +54,17 @@ input {
     border-radius: 0;
     outline: none; }
 
-head {
-  height: 0; }
-
 body {
-  background: #D9D9D9;
+  background: url("../img/bg-tile.png");
   margin-top: 4rem; }
   body div.content {
-    min-height: 95vh;
     max-width: 1280px;
     margin: auto;
-    position: relative;
-    background-image: url("../img/bg2.png");
-    background-color: #fff;
-    background-repeat: repeat-y;
+    background: #fff url("../img/bg2.png");
     background-size: contain;
     background-blend-mode: difference; }
   body nav.main-navbar {
-    background-image: url("../img/bg.png");
-    background-repeat: repeat;
+    background: url("../img/bg.png");
     background-size: cover;
     color: #fff;
     position: fixed;
@@ -84,7 +76,7 @@ body {
       display: flex;
       flex-flow: row;
       align-items: center;
-      height: 4rem; }
+      min-height: 4rem; }
       body nav.main-navbar div.navbar-inner a.logo {
         margin: 0 1.5rem;
         height: 3.2rem; }
@@ -94,11 +86,10 @@ body {
       body nav.main-navbar div.navbar-inner ul.navbar-menu {
         list-style-type: none;
         display: flex;
-        flex-flow: row;
+        flex-flow: row wrap;
         align-items: center;
         justify-content: center; }
         body nav.main-navbar div.navbar-inner ul.navbar-menu li {
-          text-align: center;
           margin-right: .75rem; }
           body nav.main-navbar div.navbar-inner ul.navbar-menu li.active a {
             background: #282828;
@@ -109,9 +100,6 @@ body {
             padding: 1.5rem;
             font-size: 1rem;
             display: block; }
-    body nav.main-navbar span.menu {
-      display: none;
-      font-size: 2.5rem; }
   body section {
     margin: 4rem 0;
     padding: 2.4rem 4rem; }
@@ -120,13 +108,13 @@ body {
       font-weight: 700;
       font-size: 3rem; }
     body section p {
-      margin-top: 30px;
-      font-size: 1.5rem;
       color: #000;
+      margin-top: 1.8rem;
+      font-size: 1.2rem;
       text-align: justify; }
   body footer {
-    margin: 50px;
-    padding: 50px 0;
+    margin: 2.7rem;
+    padding: 2.7rem 0;
     border-top: 2px solid #000;
     color: #000; }
 

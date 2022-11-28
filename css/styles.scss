@@ -72,31 +72,21 @@ input {
   }
 }
 
-head {
-  height: 0;
-}
-
 body {
-  background: #D9D9D9;
+  background: url("../img/bg-tile.png");
   margin-top: 4rem;
 
   div.content {
-    min-height: 95vh;
     max-width: 1280px;
     margin: auto;
-    position: relative;
 
-    background-image: url("../img/bg2.png");
-    background-color: #fff;
-    background-repeat: repeat-y;
+    background: #fff url("../img/bg2.png");
     background-size: contain;
     background-blend-mode: difference;
-
   }
 
   nav.main-navbar {
-    background-image: url("../img/bg.png");
-    background-repeat: repeat;
+    background: url("../img/bg.png");
     background-size: cover;
     color: #fff;
 
@@ -111,7 +101,7 @@ body {
       display: flex;
       flex-flow: row;
       align-items: center;
-      height: 4rem;
+      min-height: 4rem;
 
       a.logo {
         margin: 0 1.5rem;
@@ -127,12 +117,11 @@ body {
         list-style-type: none;
 
         display: flex;
-        flex-flow: row;
+        flex-flow: row wrap;
         align-items: center;
         justify-content: center;
 
         li {
-          text-align: center;
           margin-right: .75rem;
           &.active a {
             background: #282828;
@@ -148,11 +137,6 @@ body {
         }
       }
     }
-
-    span.menu {
-      display: none;
-      font-size: 2.5rem;
-    }
   } // div.main-navbar
 
   section {
@@ -166,16 +150,16 @@ body {
     }
 
     p {
-      margin-top: 30px;
-      font-size: 1.5rem;
       color: #000;
+      margin-top: 1.8rem;
+      font-size: 1.2rem;
       text-align: justify;
     }
   }
 
   footer {
-    margin: 50px;
-    padding: 50px 0;
+    margin: 2.7rem;
+    padding: 2.7rem 0;
     border-top: 2px solid #000;
     color: #000;
   }
