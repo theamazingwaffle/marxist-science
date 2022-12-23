@@ -9,7 +9,7 @@
 }
 
 :root {
-  --input-border: #fff;
+  --input-border: #ddd;
   --input-focus-h: 245;
   --input-focus-s: 100%;
   --input-focus-l: 42%;
@@ -162,5 +162,37 @@ body {
     padding: 2.7rem 0;
     border-top: 2px solid #000;
     color: #000;
+  }
+
+  section.upload {
+    ul#upload-files {
+      list-style-type: none;
+      li {
+        margin: 1rem 0;
+
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        img.uploaded-image {
+          height: 2.5rem;
+          margin-right: 0.9rem;
+        }
+      }
+    }
+
+    form#upload-form {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+
+      input:not(:last-child) {
+        margin-right: 0.9rem;
+      }
+
+      input[type="submit"] {
+        cursor: pointer;
+      }
+    }
   }
 }
