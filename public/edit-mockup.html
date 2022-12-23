@@ -44,24 +44,22 @@
         async function processUpload(e) {
           if (e.preventDefault) e.preventDefault();
 
-          console.log("hey, have you got your photos printed?");
           let options = {
             method: "POST",
             body: new FormData(e.target)
           };
 
-          let response = await fetch("/upload.php", options);
-
-          if (response.ok) {
-            let json = await response.json();
-            console.log(json);
-            let uploadedList = document.getElementById("uploadedFiles");
-            let newItem = document.createElement("li");
-            newItem.innerHTML = "<input type=readonly value='" + json["uploaded-content-url"] + "'>";
-            uploadedList.prepend(newItem);
-          } else {
-            alert("HTTP-Error: " + response.status);
-          }
+          let response = fetch("/upload.php", options);
+          response
+            .then(response => response.json())
+            .then(json => {
+              console.log(json);
+              let uploadedList = document.getElementById("uploadedFiles");
+              let newItem = document.createElement("li");
+              newItem.innerHTML = "<input readonly value='" +
+                                  json["content-url"] + "'>";
+              uploadedList.prepend(newItem);
+            });
 
           return false;
         }
