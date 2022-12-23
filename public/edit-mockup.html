@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Наука Марксизм</title>
+  </head>
+  <body>
+    <nav class="main-navbar">
+      <div class="navbar-inner">
+        <a href="#" class="logo">
+          <img src="img/nm-logo.png">
+        </a>
+        <ul class="navbar-menu">
+          <li><a href="/articles.php">Статьи</a></li>
+          <li><a href="#">Кружки</a></li>
+          <li><a href="#">Архив</a></li>
+        </ul>
+        <form id="search">
+          <input type="text" placeholder="Поиск">
+        </form>
+        <!-- <a href="#"><span class="material-symbols-outlined menu">menu</span></a> -->
+      </div>
+    </nav>
+    <div class="content">
+      <section class="upload">
+        <!-- TODO: Tweak styles. -->
+        <form action="edit.php" method="POST">
+        </form>
+        <ul id="uploadedFiles">
+          <form id="upload-form" action="upload.php">
+            <input type="file" accept="image/*" name="fileToUpload">
+            <input type="submit" value="upload">
+          </form>
+        </ul>
+      </section>
+      <footer>
+        Copyright &copy; 2022 Marxist Science | All rights reserved.
+      </footer>
+      <script>
+        // TODO: clean everything up
+        async function processUpload(e) {
+          if (e.preventDefault) e.preventDefault();
+
+          console.log("hey, have you got your photos printed?");
+          let options = {
+            method: "POST",
+            body: new FormData(e.target)
+          };
+
+          let response = await fetch("/upload.php", options);
+
+          if (response.ok) {
+            let json = await response.json();
+            console.log(json);
+            let uploadedList = document.getElementById("uploadedFiles");
+            let newItem = document.createElement("li");
+            newItem.innerHTML = "<input type=readonly value='" + json["uploaded-content-url"] + "'>";
+            uploadedList.prepend(newItem);
+          } else {
+            alert("HTTP-Error: " + response.status);
+          }
+
+          return false;
+        }
+        let form = document.getElementById("upload-form");
+        form.addEventListener("submit", processUpload);
+      </script>
+    </div>
+  </body>
+</html>
