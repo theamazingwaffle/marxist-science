@@ -15,6 +15,7 @@
   --input-focus-l: 42%;
 
   --cyan: #62A2A1;
+  --coral: #d65353;
 }
 
 *,
@@ -181,15 +182,29 @@ body {
 
     form#upload-form {
       display: flex;
-      flex-flow: row;
-      align-items: center;
+      flex-flow: column;
+      align-items: start;
 
-      input:not(:last-child) {
-        margin-right: 0.9rem;
+      span#upload-error {
+        margin: 2px;
+        background: var(--coral);
+        color: #fff;
+        padding: 0.3rem;
+        font-family: monospace;
+        font-size: .9rem;
       }
+      div.input-group {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
 
-      input[type="submit"] {
-        cursor: pointer;
+        input:not(:last-child) {
+          margin-right: 0.9rem;
+        }
+
+        input[type="submit"] {
+          cursor: pointer;
+        }
       }
     }
   }

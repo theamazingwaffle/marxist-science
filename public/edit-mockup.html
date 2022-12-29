@@ -26,12 +26,14 @@
     </nav>
     <div class="content">
       <section class="upload">
-        <!-- TODO: Tweak styles. -->
         <ul id="upload-files">
           <form id="upload-form" action="/upload.php" method="POST"
                 enctype="multipart/form-data">
-            <input type="file" accept="image/*" name="fileToUpload">
-            <input type="submit" value="upload">
+            <span class="error" style="display:none;" id="upload-error"></span>
+            <div class="input-group">
+              <input type="file" accept="image/*" name="fileToUpload">
+              <input type="submit" value="upload">
+            </div>
           </form>
         </ul>
       </section>
@@ -39,32 +41,38 @@
         Copyright &copy; 2022 Marxist Science | All rights reserved.
       </footer>
       <script>
-        // TODO: error handling
         async function processUpload(e) {
           if (e.preventDefault) e.preventDefault();
 
+          let formData = new FormData(e.target);
+          e.target.reset();
+
           fetch("/upload.php", {
             method: "POST",
-            body: new FormData(e.target),
-          }).then(response => {
-            if (!response.ok) throw new Error('Response not OK');
-            return response.json();
-          }).then(json => {
-            console.log(json);
-            let uploadList = document.getElementById("upload-files");
-            let li = document.createElement("li");
-            let input = document.createElement("input");
-            input.setAttribute("readonly", "");
-            input.setAttribute("value", json["content-url"]);
-            let image = document.createElement("img");
-            image.setAttribute("src", json["content-url"]);
-            image.setAttribute("class", "uploaded-image");
-            li.append(image);
-            li.append(input);
-            uploadList.prepend(li);
-          }).catch(error => {
-            console.error(error);
-          });
+            body: formData,
+          }).then(response => response.json())
+            .then(json => {
+              let errorSpan = document.getElementById("upload-error");
+              if (json.hasOwnProperty("error")) {
+                let error = json["error"];
+                errorSpan.style = "display:initial;";
+                errorSpan.innerHTML = error;
+                return;
+              }
+
+              errorSpan.style = "display: none;";
+              let uploadList = document.getElementById("upload-files");
+              let li = document.createElement("li");
+              let input = document.createElement("input");
+              input.setAttribute("readonly", "");
+              input.setAttribute("value", json["content-url"]);
+              let image = document.createElement("img");
+              image.setAttribute("src", json["content-url"]);
+              image.setAttribute("class", "uploaded-image");
+              li.append(image);
+              li.append(input);
+              uploadList.prepend(li);
+            });
 
           return false;
         }
