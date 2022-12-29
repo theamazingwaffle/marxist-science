@@ -9,12 +9,13 @@
 }
 
 :root {
-  --input-border: #fff;
+  --input-border: #ddd;
   --input-focus-h: 245;
   --input-focus-s: 100%;
   --input-focus-l: 42%;
 
   --cyan: #62A2A1;
+  --coral: #d65353;
 }
 
 *,
@@ -82,13 +83,11 @@ body {
     margin: auto;
 
     background: #fff url("../img/bg2.png");
-    background-size: contain;
     background-blend-mode: difference;
   }
 
   nav.main-navbar {
     background: url("../img/bg.png");
-    background-size: cover;
     color: #fff;
 
     position: fixed;
@@ -163,5 +162,51 @@ body {
     padding: 2.7rem 0;
     border-top: 2px solid #000;
     color: #000;
+  }
+
+  section.upload {
+    ul#upload-files {
+      list-style-type: none;
+      li {
+        margin: 1rem 0;
+
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        img.uploaded-image {
+          height: 2.5rem;
+          margin-right: 0.9rem;
+        }
+      }
+    }
+
+    form#upload-form {
+      display: flex;
+      flex-flow: column;
+      align-items: start;
+
+      span#upload-error {
+        margin: 2px;
+        background: var(--coral);
+        color: #fff;
+        padding: 0.3rem;
+        font-family: monospace;
+        font-size: .9rem;
+      }
+      div.input-group {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        input:not(:last-child) {
+          margin-right: 0.9rem;
+        }
+
+        input[type="submit"] {
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
