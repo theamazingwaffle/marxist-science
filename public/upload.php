@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 
         $data = array(
             "content-url" => "/" . $target_file,
-            "file" => $file,
         );
     }
 }
