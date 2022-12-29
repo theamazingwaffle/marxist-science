@@ -81,13 +81,11 @@ body {
     margin: auto;
 
     background: #fff url("../img/bg2.png");
-    background-size: contain;
     background-blend-mode: difference;
   }
 
   nav.main-navbar {
     background: url("../img/bg.png");
-    background-size: cover;
     color: #fff;
 
     position: fixed;
