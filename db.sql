@@ -1,29 +1,38 @@
-CREATE TABLE users (
-       id serial8 primary key not null,
-       name varchar,
-       pass_hash varchar
+BEGIN;
+
+
+CREATE TABLE IF NOT EXISTS versions(
+       version SERIAL8 PRIMARY KEY NOT NULL
 );
 
-CREATE TABLE sessions (
-       id serial8 primary key not null,
-       user_id serial8 references users(id),
-       content varchar
+CREATE TABLE IF NOT EXISTS users (
+       id SERIAL8 PRIMARY KEY NOT NULL,
+       name VARCHAR NOT NULL,
+       pass_hash VARCHAR NOT NULL
 );
 
-CREATE TABLE articles (
-       id serial8 primary key not null,
-       title varchar,
-       markdown_url varchar,
-       image_url varchar
+CREATE TABLE IF NOT EXISTS sessions (
+       id SERIAL8 PRIMARY KEY NOT NULL,
+       user_id SERIAL8 REFERENCES users(id),
+       content VARCHAR
 );
 
-CREATE TABLE images (
-       id serial8 primary key not null,
-       url varchar
+CREATE TABLE IF NOT EXISTS articles (
+       id SERIAL8 PRIMARY KEY NOT NULL,
+       title VARCHAR,
+       markdown_url VARCHAR,
+       image_url VARCHAR
 );
 
-CREATE TABLE tags (
-       id serial8 primary key not null,
-       article_id serial8 references articles(id),
-       tag varchar
+CREATE TABLE IF NOT EXISTS images (
+       id SERIAL8 PRIMARY KEY NOT NULL,
+       url VARCHAR
 );
+
+CREATE TABLE IF NOT EXISTS tags (
+       id SERIAL8 PRIMARY KEY NOT NULL,
+       article_id SERIAL8 REFERENCES articles(id),
+       tag VARCHAR
+);
+
+COMMIT;
