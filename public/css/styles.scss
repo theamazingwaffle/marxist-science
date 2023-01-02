@@ -53,7 +53,11 @@ span.highlight {
   background: linear-gradient(0deg, var(--cyan) 0%, var(--cyan) 60%, rgba(0,0,0,0) 60%);
 }
 
-input {
+textarea {
+  min-height: 350px;
+}
+
+input, textarea {
   font-family: Montserrat;
   font-weight: 600;
   padding: 0.25em 0.8em;
@@ -64,6 +68,10 @@ input {
   &:not(textarea) {
     line-height: 1;
     height: 2.25rem;
+  }
+
+  &[type="submit"] {
+    cursor: pointer;
   }
 
   &:focus {
@@ -163,7 +171,34 @@ body {
     color: #000;
   }
 
+  section.write-article {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    form#article-writer {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+
+      input, textarea {
+        margin-bottom: .6rem;
+      }
+
+      textarea {
+        font-family: monospace;
+        overflow: scroll;
+        resize: vertical;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
   section.upload {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
     ul#upload-files {
       list-style-type: none;
       li {
@@ -200,10 +235,6 @@ body {
 
         input:not(:last-child) {
           margin-right: 0.9rem;
-        }
-
-        input[type="submit"] {
-          cursor: pointer;
         }
       }
     }
