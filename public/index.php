@@ -10,18 +10,20 @@
   <body>
     <nav class="main-navbar">
       <div class="navbar-inner">
-        <a href="./index.php" class="logo">
-          <img src="img/nm-logo.png">
-        </a>
+        <div class="interactive">
+          <a href="./index.php" class="logo">
+            <img src="img/nm-logo.png">
+          </a>
+          <form id="search">
+            <input type="text" placeholder="Поиск">
+          </form>
+          <span id="menu-toggle" class="material-symbols-outlined menu">menu</span>
+        </div>
         <ul class="navbar-menu">
           <li><a href="./articles.php">Статьи</a></li>
           <li><a href="./study.php">Кружки</a></li>
           <li><a href="./archive.php">Архив</a></li>
         </ul>
-        <form id="search">
-          <input type="text" placeholder="Поиск">
-        </form>
-        <!-- <a href="#"><span class="material-symbols-outlined menu">menu</span></a> -->
       </div>
     </nav>
     <div class="content">

@@ -23,23 +23,25 @@ pg_close($dbconn);
   <body>
     <nav class="main-navbar">
       <div class="navbar-inner">
-        <a href="#" class="logo">
-          <img src="img/nm-logo.png">
-        </a>
+        <div class="interactive">
+          <a href="#" class="logo">
+            <img src="img/nm-logo.png">
+          </a>
+          <form id="search">
+            <input type="text" placeholder="Поиск">
+          </form>
+          <span id="menu-toggle" class="material-symbols-outlined menu">menu</span>
+        </div>
         <ul class="navbar-menu">
           <li><a href="/articles.php">Статьи</a></li>
           <li><a href="#">Кружки</a></li>
           <li><a href="#">Архив</a></li>
         </ul>
-        <form id="search">
-          <input type="text" placeholder="Поиск">
-        </form>
-        <!-- <a href="#"><span class="material-symbols-outlined menu">menu</span></a> -->
       </div>
     </nav>
     <div class="content">
       <section class="write-article">
-        <h1>Написать статью...</h1>
+        <h1 class="heading">Написать статью...</h1>
         <form id="article-writer" action="/publish.php" method="POST">
           <input type="text" name="title" placeholder="Название статьи">
           <input type="text" name="image-url" placeholder="Ссылка на обложку статьи">

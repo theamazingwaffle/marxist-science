@@ -36,11 +36,36 @@
   background: var(--cyan);
 }
 
+$phone-width: 768px;
+$tablet-width: 1080px;
+$desktop-width: 1280px;
+
 html {
-  font-size: 18px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 1.4;
+  font-size: 16px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: .8;
+    padding: 0.2em;
+    font-weight: 700;
+
+    &.heading {
+      padding-bottom: calc(1rem + .2em);
+    }
+  }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.7rem; }
+  h3 { font-size: 2.4rem; }
+  h4 { font-size: 2.1rem; }
+  h5 { font-size: 1.8rem; }
+  h6 { font-size: 1.5rem; }
 }
 
 a {
@@ -49,7 +74,6 @@ a {
 }
 
 span.highlight {
-  background-clip: text, border-box;
   background: linear-gradient(0deg, var(--cyan) 0%, var(--cyan) 60%, rgba(0,0,0,0) 60%);
 }
 
@@ -81,12 +105,12 @@ input, textarea {
   }
 }
 
+// PHONE STYLES
 body {
   background: url("../img/bg-tile.png");
-  margin-top: 4rem;
 
   div.content {
-    max-width: 1280px;
+    max-width: 768px;
     margin: auto;
 
     background: #fff url("../img/bg2.png");
@@ -97,39 +121,57 @@ body {
     background: url("../img/bg.png");
     color: #fff;
 
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 1030;
-
-    padding: 0 3.5% 0 3.5%;
-
     div.navbar-inner {
       display: flex;
-      flex-flow: row;
-      align-items: center;
+      flex-flow: column;
+      align-items: stretch;
       min-height: 4rem;
 
-      a.logo {
-        margin: 0 1.5rem;
-        height: 3.2rem;
+      div.interactive {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 4rem;
 
-        img {
-          width: auto;
-          height: 100%;
+        a.logo {
+          margin-left: 1rem;
+          height: 3.2rem;
+
+          img {
+            width: auto;
+            height: 100%;
+          }
+        }
+
+        form#search {
+          margin: 0 1rem;
+          @media(max-width: 420px) {
+            input { width: 150px; }
+          }
+        }
+        span#menu-toggle {
+          margin-right: 1rem;
+          font-size: 3rem;
+          cursor: pointer;
+
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
       }
 
       ul.navbar-menu {
         list-style-type: none;
+        max-width: 100%;
+        margin-top: 1.5rem;
 
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: center;
+        display: none;
+        flex-flow: column;
 
         li {
-          margin-right: .75rem;
+          border-top: 1px solid rgba(0,0,0,0.25);
           &.active a {
             background: #282828;
             box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.25);
@@ -147,32 +189,23 @@ body {
   } // div.main-navbar
 
   section {
-    margin: 4rem 0;
-    padding: 2.4rem 4rem;
-
-    h1 {
-      color: #000;
-      font-weight: 700;
-      font-size: 3rem;
-    }
+    padding: 1rem;
 
     p {
-      color: #000;
-      margin-top: 1.8rem;
+      margin-bottom: 1.8rem;
       font-size: 1.2rem;
       text-align: justify;
     }
   }
 
   footer {
-    margin: 2.7rem;
-    padding: 2.7rem 0;
-    border-top: 2px solid #000;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-top: 2px solid rgba(0,0,0,0.3);
     color: #000;
   }
 
   section.write-article {
-    margin-bottom: 0;
     padding-bottom: 0;
 
     form#article-writer {
@@ -195,9 +228,7 @@ body {
   }
 
   section.upload {
-    margin-top: 0;
     padding-top: 0;
-    padding-bottom: 0;
 
     ul#upload-files {
       list-style-type: none;
@@ -228,9 +259,10 @@ body {
         font-family: monospace;
         font-size: .9rem;
       }
+
       div.input-group {
         display: flex;
-        flex-flow: row;
+        flex-flow: row wrap;
         align-items: center;
 
         input:not(:last-child) {
@@ -238,5 +270,75 @@ body {
         }
       }
     }
+  }
+}
+
+// TABLET STYLES
+@media(min-width: $phone-width) {
+  html {
+    h1, h2, h3, h4, h5, h6 {
+      &.heading {
+        padding-bottom: calc(1.8rem + .2em);
+      }
+    }
+  }
+
+  body {
+    margin-top: 4rem;
+
+    section {
+      padding: 1.8rem;
+    }
+
+    footer {
+      margin: 0 1.8rem;
+      padding: 1.8rem 0;
+    }
+
+    nav.main-navbar {
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 1030;
+
+      padding: 0 1.5rem;
+
+      div.navbar-inner {
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        div.interactive {
+          margin-bottom: 0;
+
+          span#menu-toggle { display: none; }
+          form#search {
+            margin: 0;
+            margin-left: 2rem;
+          }
+        }
+
+        ul.navbar-menu {
+          display: flex;
+          flex-flow: row wrap;
+          margin-top: 0;
+
+          li {
+            border: none;
+            &:not(:last-child) { margin-right: .75rem; }
+
+            a {
+              padding: 1.5rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: $tablet-width) {
+  body div.content {
+    max-width: $tablet-width;
   }
 }
