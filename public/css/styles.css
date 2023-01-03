@@ -36,7 +36,7 @@ html {
       font-size: 18px; } }
   html h1, html h2, html h3, html h4, html h5, html h6 {
     line-height: .8;
-    padding: 0.2em;
+    padding: 0.2em 0;
     font-weight: 700; }
     html h1.heading, html h2.heading, html h3.heading, html h4.heading, html h5.heading, html h6.heading {
       padding-bottom: calc(1rem + .2em); }
