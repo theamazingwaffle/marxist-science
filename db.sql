@@ -1,7 +1,7 @@
 BEGIN;
 
-CREATE TABLE IF NOT EXISTS versions(
-       version SERIAL8 PRIMARY KEY NOT NULL
+CREATE TABLE IF NOT EXISTS versions (
+       version SERIAL8 NOT NULL UNIQUE
 );
 
 CREATE OR REPLACE PROCEDURE new_version(current INTEGER, commands TEXT) AS $$
@@ -15,31 +15,31 @@ END; $$ LANGUAGE plpgsql;
 
 CALL new_version(1, $$
   CREATE TABLE IF NOT EXISTS users (
-         id SERIAL8 PRIMARY KEY NOT NULL,
+         id SERIAL8 PRIMARY KEY,
          name VARCHAR NOT NULL,
          pass_hash VARCHAR NOT NULL
   );
 
   CREATE TABLE IF NOT EXISTS sessions (
-         id SERIAL8 PRIMARY KEY NOT NULL,
+         id SERIAL8 PRIMARY KEY,
          user_id SERIAL8 REFERENCES users(id),
          content VARCHAR
   );
 
   CREATE TABLE IF NOT EXISTS articles (
-         id SERIAL8 PRIMARY KEY NOT NULL,
+         id SERIAL8 PRIMARY KEY,
          title VARCHAR,
          markdown_url VARCHAR,
          image_url VARCHAR
   );
 
   CREATE TABLE IF NOT EXISTS images (
-         id SERIAL8 PRIMARY KEY NOT NULL,
+         id SERIAL8 PRIMARY KEY,
          url VARCHAR
   );
 
   CREATE TABLE IF NOT EXISTS tags (
-         id SERIAL8 PRIMARY KEY NOT NULL,
+         id SERIAL8 PRIMARY KEY,
          article_id SERIAL8 REFERENCES articles(id),
          tag VARCHAR
   );
@@ -47,7 +47,7 @@ $$); -- version 1
 
 CALL new_version(2, $$
   CREATE TABLE IF NOT EXISTS archive (
-         id SERIAL8 PRIMARY KEY NOT NULL,
+         id SERIAL8 PRIMARY KEY,
          title VARCHAR NOT NULL,
          author VARCHAR,
          pub_date DATE,
