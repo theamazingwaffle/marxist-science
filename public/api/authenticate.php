@@ -1,8 +1,8 @@
 <?php
 header('Location: /login.php');
 
-require '../secrets.php';
-require '../lib/auth.php';
+require '../../secrets.php';
+require '../../lib/auth.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') exit;
 

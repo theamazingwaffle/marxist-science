@@ -37,7 +37,7 @@ pg_close($dbconn);
     <div class="content">
       <section class="login">
         <h1>Вход</h1>
-        <form action="authenticate.php" method="POST">
+        <form action="/api/authenticate.php" method="POST">
           <input type="password" name="password" placeholder="Пароль">
           <input type="submit" value="Войти">
         </form>

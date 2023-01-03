@@ -42,7 +42,7 @@ pg_close($dbconn);
     <div class="content">
       <section class="write-article">
         <h1 class="heading">Написать статью...</h1>
-        <form id="article-writer" action="/publish.php" method="POST">
+        <form id="article-writer" action="/api/publish.php" method="POST">
           <input type="text" name="title" placeholder="Название статьи">
           <input type="text" name="image-url" placeholder="Ссылка на обложку статьи">
           <textarea name="content">Содержание статьи тут</textarea>
@@ -51,7 +51,7 @@ pg_close($dbconn);
       </section>
       <section class="upload">
         <ul id="upload-files">
-          <form id="upload-form" action="/upload.php" method="POST"
+          <form id="upload-form" action="/api/upload.php" method="POST"
                 enctype="multipart/form-data">
             <span class="error" style="display:none;" id="upload-error"></span>
             <div class="input-group">
