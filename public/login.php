@@ -46,5 +46,6 @@ pg_close($dbconn);
         Copyright &copy; 2022 Marxist Science | All rights reserved.
       </footer>
     </div>
+    <script src="/js/menu-toggle.js" defer></script>
   </body>
 </html>

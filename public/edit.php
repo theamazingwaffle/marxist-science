@@ -66,5 +66,6 @@ pg_close($dbconn);
       </footer>
     </div>
     <script src="/js/upload.js" defer></script>
+    <script src="/js/menu-toggle.js" defer></script>
   </body>
 </html>
