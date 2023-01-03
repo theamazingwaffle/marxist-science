@@ -11,7 +11,7 @@
     <nav class="main-navbar">
       <div class="navbar-inner">
         <div class="interactive">
-          <a href="./index.php" class="logo">
+          <a href="/index.php" class="logo">
             <img src="img/nm-logo.png">
           </a>
           <form id="search">
@@ -20,9 +20,9 @@
           <span id="menu-toggle" class="material-symbols-outlined menu">menu</span>
         </div>
         <ul class="navbar-menu">
-          <li><a href="./articles.php">Статьи</a></li>
-          <li><a href="./study.php">Кружки</a></li>
-          <li><a href="./archive.php">Архив</a></li>
+          <li><a href="/articles.php">Статьи</a></li>
+          <li><a href="/study.php">Кружки</a></li>
+          <li><a href="/archive.php">Архив</a></li>
         </ul>
       </div>
     </nav>
