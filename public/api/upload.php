@@ -35,7 +35,7 @@ if (!check_auth($dbconn)) {
                 http_response_code(500); # Internal server error
                 $data["error"] = "Failed to upload file";
             } else {
-                $end_location = str_replace('../', '/', $target_file, 1);
+                $end_location = str_replace('../', '/', $target_file);
                 $query = 'INSERT INTO images (url) VALUES ($1)';
                 pg_query_params($dbconn, $query, [$end_location]);
                 $data["content-url"] = $end_location;

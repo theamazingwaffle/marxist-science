@@ -4,7 +4,7 @@ async function processUpload(e) {
     let formData = new FormData(e.target);
     e.target.reset();
 
-    fetch("/upload.php", {
+    fetch("/api/upload.php", {
         method: "POST",
         body: formData,
     }).then(response => response.json())
