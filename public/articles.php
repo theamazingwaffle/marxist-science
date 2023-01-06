@@ -27,13 +27,23 @@
       </div>
     </nav>
     <div class="content">
-      <section class="about">
+      <section class="articles">
         <h1 class="heading">
           Статьи
         </h1>
-        <p>
-          Здесь будет список статей НМ.
-        </p>
+        <ul class="article-list">
+          <li>
+            <a href="#">
+              <div class="article-image" style="background-image: url('/uploads/63b8675fc5ff3.png');"></div>
+              <div class="article-content">
+                <span class="article-title">Article title</span>
+                <div class="article-preview-text">
+                  Short article description.
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
       </section>
       <footer>
         Copyright &copy; 2022 Marxist Science | All rights reserved.

@@ -36,10 +36,10 @@ html {
       font-size: 18px; } }
   html h1, html h2, html h3, html h4, html h5, html h6 {
     line-height: .8;
-    padding: 0.2em 0;
+    margin: 0.2em 0;
     font-weight: 700; }
     html h1.heading, html h2.heading, html h3.heading, html h4.heading, html h5.heading, html h6.heading {
-      padding-bottom: calc(1rem + .2em); }
+      margin-bottom: calc(1rem + .2em); }
   html h1 {
     font-size: 3rem; }
   html h2 {
@@ -191,10 +191,45 @@ body {
         align-items: center; }
         body section.upload form#upload-form div.input-group input:not(:last-child) {
           margin-right: 0.9rem; }
+  body section.articles ul.article-list {
+    list-style-type: none; }
+    body section.articles ul.article-list li {
+      padding: 1rem;
+      background: url("/img/bg.png");
+      color: #fff; }
+      body section.articles ul.article-list li:not(:last-child) {
+        margin-bottom: .5rem; }
+      body section.articles ul.article-list li a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center; }
+      body section.articles ul.article-list li div.article-image {
+        width: 120px;
+        height: 67px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0; }
+      body section.articles ul.article-list li div.article-content {
+        margin-left: 1rem;
+        display: flex;
+        flex-flow: column;
+        align-items: start; }
+        body section.articles ul.article-list li div.article-content span.article-title, body section.articles ul.article-list li div.article-content div.article-preview-text {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden; }
+        body section.articles ul.article-list li div.article-content span.article-title {
+          font-weight: 600;
+          line-height: 1.2;
+          -webkit-line-clamp: 2; }
+        body section.articles ul.article-list li div.article-content div.article-preview-text {
+          color: #bbb;
+          font-weight: 400;
+          -webkit-line-clamp: 1; }
 
 @media (min-width: 768px) {
   html h1.heading, html h2.heading, html h3.heading, html h4.heading, html h5.heading, html h6.heading {
-    padding-bottom: calc(1.8rem + .2em); }
+    margin-bottom: calc(1.8rem + .2em); }
 
   body {
     margin-top: 4rem; }
@@ -229,9 +264,39 @@ body {
             body nav.main-navbar div.navbar-inner ul.navbar-menu li:not(:last-child) {
               margin-right: .75rem; }
             body nav.main-navbar div.navbar-inner ul.navbar-menu li a {
-              padding: 1.5rem 1rem; } }
+              padding: 1.5rem 1rem; }
+    body section.articles ul.article-list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: start;
+      align-items: start; }
+      body section.articles ul.article-list li {
+        position: relative;
+        z-index: 40;
+        max-width: calc((768px - (2*1.8rem) - 1.5rem) / 3);
+        margin: 0 0.5rem 0.5rem 0; }
+        body section.articles ul.article-list li:not(:last-child) {
+          margin: 0 0.5rem 0.5rem 0; }
+        body section.articles ul.article-list li a {
+          flex-flow: column;
+          align-items: start; }
+        body section.articles ul.article-list li div.article-image {
+          width: 196px;
+          height: 108px; }
+        body section.articles ul.article-list li div.article-content {
+          margin: 0; }
+          body section.articles ul.article-list li div.article-content span.article-title {
+            margin: 0.5rem 0; }
+          body section.articles ul.article-list li div.article-content div.article-preview-text {
+            -webkit-line-clamp: 3;
+            font-size: 0.8rem; } }
 @media (min-width: 1080px) {
   body div.content {
-    max-width: 1080px; } }
+    max-width: 1080px; }
+    body div.content section.articles ul.article-list li {
+      max-width: calc((1080px - (2*1.8rem) - 2rem) / 4); }
+      body div.content section.articles ul.article-list li div.article-image {
+        width: calc(247px - 2rem);
+        height: 128px; } }
 
 /*# sourceMappingURL=styles.css.map */
